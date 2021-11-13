@@ -1,0 +1,114 @@
+
+Windows 10
+
+If you do have the Installation Media :
+
+    Insert the Media (DVD/USB) in your PC and restart.
+
+    Boot from the media.
+
+    Select Repair Your Computer.
+
+    Select Troubleshoot.
+
+    Select Advanced Options.
+
+    Choose Command Prompt from the menu :
+
+        Type and run the command :
+
+        diskpart
+
+        Type and run the command :
+
+        sel disk 0
+
+        Type and run the command :
+
+        list vol
+
+    Verify that the EFI partition (EPS - EFI System Partition) is using the FAT32 file system and assign a drive letter to it (Assign a letter that isn't already in use.):
+
+        Type and run the command :
+
+        sel vol <number of volume>
+
+        Type and run the command :
+
+        assign letter=<drive letter>:
+
+        Type and run the command :
+
+        exit
+
+    In order to repair the boot record :
+
+        Type and run the command :
+
+        cd /d <drive letter>:\EFI\Microsoft\Boot\
+
+        Type and run the command :
+
+        bootrec /FixBoot
+
+If you don't have the Installation Media :
+
+    Restart your PC
+
+    Tap rapidly on the <F8> key once the PC has turned on, but before the Windows Splash Screen appears.
+
+    Please be aware this may take several attempts. The timing for this option was shortened significantly from that in Windows 7.
+
+    Select Repair your computer from the menu that appears.
+
+    Select Command Prompt from the Advanced Options tab in the Troubleshoot screen :
+
+        Type and run the command :
+
+        diskpart
+
+        Type and run the command :
+
+        sel disk 0
+
+        Type and run the command :
+
+        list vol
+
+    Verify that the EFI partition (EPS - EFI System Partition) is using the FAT32 file system and assign a drive letter to it (Assign a letter that isn't already in use.):
+
+        Type and run the command :
+
+        sel vol <number of volume>
+
+        Type and run the command :
+
+        assign letter=<drive letter>:
+
+        Type and run the command :
+
+        exit
+
+    In order to repair the boot record :
+
+        Type and run the command :
+
+        cd /d <drive letter>:\EFI\Microsoft\Boot\
+
+        Type and run the command :
+
+        bootrec /FixBoot
+
+The next step is the same across all the operating systems at this point :
+
+    Rebuild the BCD store
+
+    First run the command below to backup the old BCD :
+
+    ren BCD BCD.old
+
+    Now recreate it using this command :
+
+    bcdboot c:\Windows /l en-us /s <boot letter>: All
+
+Note: If you are creating boot entries on an attached USB Flash or other external drive add /f between the : and the ALL. Please remember that the <boot letter> is replaced with whatever the letter of the drive you are booting from is. (ie. C:\, D:\)

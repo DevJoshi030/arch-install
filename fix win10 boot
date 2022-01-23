@@ -50,6 +50,10 @@ If you do have the Installation Media :
         Type and run the command :
 
         bootrec /FixBoot
+    
+    If you get Access Denied:
+
+        bootrec /rebuildbcd
 
 If you don't have the Installation Media :
 
@@ -98,7 +102,11 @@ If you don't have the Installation Media :
         Type and run the command :
 
         bootrec /FixBoot
+    
+    If you get Access Denied:
 
+        bootrec /rebuildbcd
+        
 The next step is the same across all the operating systems at this point :
 
     Rebuild the BCD store

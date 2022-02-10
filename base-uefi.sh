@@ -5,10 +5,10 @@ hwclock --systohc
 sed -i '177s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-echo "arch" >> /etc/hostname
+echo "BlackBox" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
+echo "127.0.1.1 BlackBox.localdomain BlackBox" >> /etc/hosts
 echo root:root | chpasswd
 
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
@@ -20,7 +20,7 @@ pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools d
 pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/defaults/grub
+echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager

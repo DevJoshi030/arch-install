@@ -11,6 +11,8 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 BlackBox.localdomain BlackBox" >> /etc/hosts
 echo root:root | chpasswd
 
+vim /etc/pacman.conf
+
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
 # You can remove the tlp package if you are installing on a desktop or vm
 

@@ -80,7 +80,7 @@ ENABLE_CORRECTION="true"
 plugins=(git
   bundler
   dotenv
-  osx
+  macos
   rake
   rbenv
   ruby

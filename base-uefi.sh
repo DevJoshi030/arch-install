@@ -31,10 +31,10 @@ systemctl enable sshd
 systemctl enable libvirtd
 
 useradd -m dev 
-echo dev:devjoshi | chpasswd
-usermod -aG libvirt dev
+echo elgaEraW:elgaEraW | chpasswd
+usermod -aG libvirt elgaEraW
 
-echo "dev ALL=(ALL) ALL" >> /etc/sudoers.d/dev
+echo "elgaEraW ALL=(ALL) ALL" >> /etc/sudoers.d/elgaEraW
 
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"

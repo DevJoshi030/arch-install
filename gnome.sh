@@ -3,13 +3,13 @@
 sudo timedatectl set-ntp true
 sudo hwclock --systohc
 
-git clone https://aur.archlinux.org/pikaur.git
-cd pikaur/
+git clone https://aur.archlinux.org/yay.git
+cd yay/
 makepkg -si --noconfirm
 
 sudo pacman -S --noconfirm xorg gdm gnome gnome-extra firefox gnome-tweaks vlc
 
-pikaur -S ttf-ms-fonts
+yay -S ttf-ms-fonts
 
 # sudo flatpak install -y spotify
 # sudo flatpak install -y kdenlive

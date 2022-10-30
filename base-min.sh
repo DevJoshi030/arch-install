@@ -28,9 +28,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable bluetooth
 systemctl enable sshd
 
-useradd -m dev 
+useradd -m elgaeraw
 echo elgaeraw:elgaeraw | chpasswd
-usermod -aG libvirt elgaeraw
+usermod -aG sudo elgaeraw
 
 echo "elgaeraw ALL=(ALL) ALL" >> /etc/sudoers.d/elgaeraw
 
